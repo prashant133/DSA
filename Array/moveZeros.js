@@ -2,8 +2,6 @@
 
 // Note that you must do this in-place without making a copy of the array.
 
- 
-
 // Example 1:
 
 // Input: nums = [0,1,0,3,12]
@@ -13,16 +11,20 @@
 // Input: nums = [0]
 // Output: [0]
 
-
 nums = [0, 1, 0, 3, 12];
 
-const moveZeros = function(nums){
-    for(let i = 0 ; i < nums.length -1  ; i ++){
-      if(nums[i] === 0 ){
-        console.log(nums[i])
-      }
+const moveZeros = function (nums) {
+  let writeIndex = 0;
+
+  for (let i = 0; i < nums.length; i++) {
+    if (nums[i] != 0) {
+      let hold = nums[writeIndex];
+      nums[writeIndex] = nums[i];
+      nums[i] = hold;
+      writeIndex++;
     }
+  }
+  console.log(nums)
+};
 
-}
-
-moveZeros(nums)
+moveZeros(nums);
