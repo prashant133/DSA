@@ -15,9 +15,29 @@
 // Output: 0
 // Explanation: The result cannot be 2, because [-2,-1] is not a subarray.
 
-// nums = [2, 3, -2, 4];
+// nums = [2, 3, -2, 4]; //6
+nums = [-2, 3, -4]; // 24
+// nums = [-2, 0, -1]; //0
 
-// function maxProduct(nums) {
+// brute force
+function maxProductBruteForce(nums) {
+  let maxproduct = nums[0];
+
+  for (let i = 0; i < nums.length; i++) {
+    let product = 1;
+    for (let j = i; j < nums.length; j++) {
+      product = product * nums[j];
+
+      maxproduct = Math.max(maxproduct, product);
+    }
+  }
+
+  return maxproduct;
+}
+
+// console.log(maxProductBruteForce(nums));
+
+// function maxProductKadane(nums) {
 //   let product = nums[0];
 //   let maxProduct = nums[0];
 
@@ -25,8 +45,7 @@
 //     product = Math.max(nums[i], product * nums[i]);
 //     maxProduct = Math.max(maxProduct, product);
 //   }
-
 //   return maxProduct;
 // }
 
-// console.log(maxProduct(nums));
+// console.log(maxProductKadane(nums));
