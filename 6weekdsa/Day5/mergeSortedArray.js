@@ -29,27 +29,16 @@
 // // The result of the merge is [1].
 // // Note that because m = 0, there are no elements in nums1. The 0 is only there to ensure the merge result can fit in nums1.
 
-// const nums1 = [1, 2, 3, 0, 0, 0];
-// const nums2 = [2, 5, 6];
-// const m = 3;
-// const n = 3;
+const nums1 = [1, 2, 3, 0, 0, 0];
+const nums2 = [2, 5, 6];
+const m = 3;
+const n = 3;
 
-// function mergeArray(nums1, m, nums2, n) {
-//   let sorted = [];
+function mergeArray(nums1, m, nums2, n) {
+  for (let i = 0; i < n; i++) {
+    nums1[m + i] = nums2[i];
+  }
 
-//   for (let i = 0; i < nums1.length; i++) {
-//     if (nums1[i] != 0) {
-//       sorted.push(nums1[i]);
-//     }
-//   }
-
-//   for (let j = 0; j < nums2.length; j++) {
-//     if (nums2[j] != 0) {
-//       sorted.push(nums2[j]);
-//     }
-//   }
-
-//   return sorted;
-// }
-
-// console.log(mergeArray(nums1, nums2));
+  nums1.sort((a, b) => a - b);
+}
+console.log(mergeArray(nums1, nums2));
