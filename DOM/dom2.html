@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>dom 2</title>
+  </head>
+  <body>
+    <ul class="language">
+      <li>javascript</li>
+    </ul>
+  </body>
+
+  <script>
+    //this process use travers method to add the new element if there is 1000 li then it would create a problem
+    function addLanguage(langName) {
+      const li = document.createElement("li");
+      li.innerHTML = `${langName}`;
+      document.querySelector(".language").appendChild(li);
+    }
+    addLanguage("python");
+
+    function addOptiLanguage(langName) {
+      const li = document.createElement("li");
+      li.appendChild(document.createTextNode(langName));
+      document.querySelector(".language").appendChild(li);
+    }
+    addOptiLanguage("typescript");
+
+    // Edit
+    const secondLang = document.querySelector("li:nth-child(2)");
+    // secondLang.innerHTML = "update lanugae"
+    const newLi = document.createElement("li");
+    newLi.textContent = "update";
+    secondLang.replaceWith(newLi);
+
+    // remove
+    const lastLang = document.querySelector("li:last-child");
+    lastLang.remove();
+
+    const changeColor = document.querySelector("li");
+    changeColor.style.background = "orange";
+    changeColor.style.color = "blue";
+
+    const changeColor2 = document.querySelector("li");
+    changeColor2.style.background = "blue";
+    changeColor2.style.color = "red";
+  </script>
+</html>
