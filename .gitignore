@@ -1,0 +1,18 @@
+# Ignore everything at repository root
+/*
+
+# Keep this gitignore
+!/.gitignore
+
+# Track only these folders
+!/arraymethods/
+!/DOM/
+!/fileSystem/
+!/http/
+!/iterations/
+!/miniproject/
+!/striver/
+
+# Ignore dependencies and environment files everywhere
+node_modules/
+.env
